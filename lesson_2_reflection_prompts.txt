@@ -10,13 +10,28 @@ What value do you think it offers?
 How can you use the staging area to make sure you have one commit per logical
 change?
 
+	The staging area allows for a preview of a commit before it is made.  The differences that would be committed can be seen with the command "git diff --staged".  That shows the differences between the staging area and the last commit.  If the differences shows a "logical change", then it is good practice to commit those changes.  
+
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+	   Branches can be useful when there is an experimental change that the developer wants to try out, a change that they don't want to affect the program until the change is proven stable for necessary.  A branch allows for a new lineage of commits that is separate from the main branch, Master.  Changes on either branch won't show up on the other, allowing for changes on branches to be independent.  
+
 How do the diagrams help you visualize the branch structure?
+
+    Diagrams give 2 dimensions to the graph of commits, making it easy to see different branches coming out of Master.  1 dimension is needed to the the lineage of the Master branch, and the other dimension is nice to show branches coming out.  
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+	Merging two branches together makes a staging area that has lines from both of the two branches. The process looks the additions and subtractions that both branches made from their common parent, and applies them to the staging area.  We show the merging commit as having two parents because it uses changes from both branches.  
+
 What are the pros and cons of Git’s automatic merging vs. always doing merges
 manually?
+	Git's automatic merging detects the modifications each branch made from their common ancestor.  If there are no overlapping modifications (on the same lines), fantastic, git merges those modifications.  If not, Git labels the conflicting areas, and leaves it up to the user to manually.  So:
+	Git automatic merging: 
+		pro: can apply all non-conflicting modifications of both branches 
+		con: can't figure out conflicts, and isn't intelligent with modifications to source code (could break it) 
+	Manual merges:
+		pro: intelligently applies modifications from both branches to (hopefully) not break code
+		con: tedious 
