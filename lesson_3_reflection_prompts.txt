@@ -17,3 +17,7 @@ What is the benefit of having a copy of the last known state of the remote store
 How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
 
 	Collaboration without GitHub needs a different way to transfer and sync files, namely, a shared cloud folder.  I think the only easy thing about that would be the absence of learning another interface, but sharing changes on a file would become much harder.  Every file change would need a new file name entered manually, and there would not be that convenient 'git merge'.  
+
+When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+	Making a separate branch gives a developer their own space to work in, and to experiment in.  Having that branch to experiment in keeps the focus of the branch on achieving one goal, and keeps the concerns and new commits of the master branch separate.  The new branch can be merged into the master branch when the changes are ready to be accepted.  If there is no need for experimentation and there are no other developers to make new commits to master, then working in master could make sense.  
